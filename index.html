@@ -1,94 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ladli Shehzadi</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: pink;
-      color: #4a0033;
-      overflow-x: hidden;
-    }
-    .heart {
-      position: fixed;
-      top: -10px;
-      color: red;
-      font-size: 20px;
-      animation: fall 6s linear infinite;
-    }
-    @keyframes fall {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-    }
-    .welcome {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(to bottom, #ffccf2, #ffd6ec);
-      color: #a6005c;
-      font-size: 2rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px white;
-    }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #fff0f7;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      line-height: 1.8;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | Ladli Shehzadi</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <script>
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = Math.random() * 20 + 15 + "px";
-      heart.innerText = "❤️";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }
-    setInterval(createHeart, 300);
-  </script>
-
-  <div class="welcome">
-    💖 Welcome, Meri Pyari Ladli Shehzadi 💖 <br/>
-    Tum meri zindagi ka sabse khoobsurat hissa ho.
+<header>
+  <div class="header-inner container">
+    <div class="brand">Ladli Shehzadi</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="kahani.html">Kahani</a>
+      <a href="plans.html">Plans</a>
+      <a href="dreams.html">Dreams</a>
+    </nav>
   </div>
+</header>
+<section class="hero">
+  <div class="container">
+    <h1>Welcome, Meri Pyari Ladli Shehzadi 💖</h1>
+    <p class="muted">Is ghar jaisi website par har scroll ke saath tumhe meri mohabbat ki nayi parchaai milegi. Pink theme, dil ki baatein, aur choti choti hearts ki barish—sirf tumhare liye.</p>
+  </div>
+</section>
+<div class="container">
 
-  <section>
-    <h2>🌹 Meri Ladli Shehzadi ke Naam</h2>
-    <p>
-      Meri pyari Ladli Shehzadi, ye website sirf tumhare liye hai. Har lafz, har jumla sirf tumhari muskaan ke liye likha gaya hai. Tum meri duniya ka sabse khoobsurat hissa ho, meri duaon ka sabse pyara jawab...
-    </p>
-  </section>
+<section class="card">
+  <h2>Meri Ladli Shehzadi ke Naam</h2>
+  <p>Meri pyari Ladli Shehzadi, ye jagah sirf tumhare liye hai—aisa ghar jahan lafz bhi muskura kar tumhara intezar karte hain. Main chahta hoon ke tum jab bhi yahan aao, tumhein sukoon mile, tumhein wohi ehsaas ho jo meri baahon mein hota hai: mehfooz, pyara, aur bilkul apna. Iss safhe par likha har jumla meri taraf se tumhare liye ek chhota sa tohfa hai. Main janta hoon ke zindagi kabhi tez, kabhi dheemi, kabhi rangeen aur kabhi khamosh ho jati hai—lekin tum mere saath ho to har mausam khoobsurat lagta hai. Ye website tumhari muskurahat ke liye banai gayi hai, taki har scroll ke saath tumhe meri mohabbat ki nayi parchaai mehsoos ho. Welcome home, Shehzadi; ye duniya tumhari hai, aur main hamesha tumhara.</p>
+</section>
 
-  <section>
-    <h2>✨ Hamari Kahani</h2>
-    <p>
-      Hamari kahani ek choti si mulaqat se shuru hui thi, lekin us mulaqat mein ek aisi chamak thi jo hamesha ke liye hamare dilon ko jod gayi...
-    </p>
-  </section>
+<section class="card">
+  <h2>Hamari Kahani — Ek Narm Shuruat</h2>
+  <p>Hamari kahani kisi filmi scene ki tarah shor se nahi, balki dhimi si muskurahat se shuru hui thi. Ek lamha tha—chhota, saada, magar jaadu se bhara—jismein tumhari aankhon ne meri khamoshi ko samajh liya. Tab se har din ek naye haseen page ki tarah khulta gaya. Tumhari hanssi, meri subah; tumhari khamoshi, meri raat ka sukoon. Jab kabhi zindagi ne sawal poochha, tumne apne andaz se jawab bana diya. Mujhe yaad hai wo chhoti chhoti baatein—adhoori chai, adhura safar, magar dil poora. Aaj jab ye lafz likh raha hoon, mehsoos hota hai ke tum meri kahani nahi; tum hi kahani ho. Aur main, bas tumhara safar ban kar khush hoon—har mod par tumhare saath.</p>
+</section>
 
-  <section>
-    <h2>💌 Mere Khwab aur Plans</h2>
-    <p>
-      Meri Ladli Shehzadi, mere khwab tumhare bina adhure hain. Main chahta hoon ke hum dono mil kar apni chhoti si duniya banayen...
-    </p>
-  </section>
+<section class="card">
+  <h2>Hamari Kahani — Safar Jari Hai</h2>
+  <p>Kabhi kabhi sochta hoon, agar tum na milti to shayad main zindagi ko itni gaur se dekhna hi na seekhta. Tumne mujhe sikhaaya ke pyar ke liye badi baaton ki zarurat nahi hoti—ek sahi waqt par rakha haath, ek sacchi nazar, aur ek chhota sa ‘main yahan hoon’ hi kaafi hota hai. Tumhari khushboo se bhar gaye mere din; tumhari duaon se halka ho gaya mera bojh. Yeh kahani ab rukegi nahi, kyun ke hum dono ne ise likhne ka wada kiya hai—barishon ke mausam me, sard hawaon me, aur dhoop ke neeche bhi. Har pal, tumhara; har sans, hamara.</p>
+</section>
 
-  <section>
-    <h2>❤️ Pyar ka Khat</h2>
-    <p>
-      Agar lafzon mein meri mohabbat samajh aati to main tumhe hazaron kitaabein likh kar deta. Tum meri zindagi ki wo sabse khoobsurat dua ho...
-    </p>
-  </section>
-
+</div>
+<footer class="muted">Made with ❤ for my Ladli Shehzadi</footer>
+<script src="script.js"></script>
 </body>
 </html>
