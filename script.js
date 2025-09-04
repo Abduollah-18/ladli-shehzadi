@@ -1,41 +1,68 @@
 
 const header = document.querySelector('header');
-const onScroll = () => {
-  if (window.scrollY > 40) header.classList.add('shrink');
-  else header.classList.remove('shrink');
-};
-document.addEventListener('scroll', onScroll);
-onScroll();
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 50) header.classList.add('small'); else header.classList.remove('small');
+});
 
-function createHeart(){
-  const heart = document.createElement('div');
-  heart.className = 'heart';
-  heart.textContent = '❤️';
-  heart.style.left = Math.random()*100 + 'vw';
-  heart.style.fontSize = (Math.random()*16 + 14) + 'px';
-  heart.style.animationDuration = (Math.random()*3 + 4) + 's';
-  document.body.appendChild(heart);
-  setTimeout(()=>heart.remove(), 7000);
+const teddyPeek = document.getElementById('teddy');
+const teddyWrap = document.getElementById('teddyWrap');
+const lips = document.getElementById('lipsOverlay');
+
+function makeHeart(){
+  const h = document.createElement('div');
+  h.className='heart';
+  h.textContent = '❤';
+  h.style.left = Math.random()*100 + 'vw';
+  h.style.fontSize = (Math.random()*18 + 12) + 'px';
+  h.style.animationDuration = (Math.random()*3 + 4) + 's';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(), 8000);
 }
-setInterval(createHeart, 350);
+setInterval(makeHeart, 350);
 
-const lipsOverlay = document.createElement('div');
-lipsOverlay.className = 'lips-overlay';
-lipsOverlay.innerHTML = '<div class="lips-emoji">💋</div>';
-document.body.appendChild(lipsOverlay);
+let lastY = 0;
+let kissDone = false;
 
-let lastSection = null;
-const sections = document.querySelectorAll('section.card');
-const obs = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      if(lastSection && lastSection !== entry.target){
-        lipsOverlay.classList.add('show');
-        setTimeout(()=> lipsOverlay.classList.remove('show'), 800);
-      }
-      lastSection = entry.target;
+function followAndBounce(){
+  const y = window.scrollY;
+  if(y > 120){
+    if(!teddyWrap.classList.contains('teddy-follow')){
+      teddyWrap.classList.add('teddy-follow');
+      teddyWrap.style.top = '90px';
     }
-  });
-},{ threshold: .6 });
+    const travel = Math.min(240, y * 0.25);
+    teddyWrap.style.top = (90 + travel) + 'px';
+    if(y > lastY + 20){
+      teddyPeek.classList.remove('bounce');
+      void teddyPeek.offsetWidth;
+      teddyPeek.classList.add('bounce');
+    }
+  }else{
+    teddyWrap.classList.remove('teddy-follow');
+    teddyWrap.style.top = '';
+  }
+  lastY = y;
 
-sections.forEach(s => obs.observe(s));
+  const docH = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+  const triggerPoint = docH * 0.35;
+  const resetPoint = docH * 0.10;
+
+  if(!kissDone && y > triggerPoint){
+    startKiss();
+    kissDone = true;
+  }
+  if(kissDone && y < resetPoint){
+    kissDone = false;
+  }
+}
+window.addEventListener('scroll', followAndBounce);
+
+function startKiss(){
+  teddyWrap.classList.add('teddy-center');
+  lips.classList.add('show');
+  setTimeout(()=>{
+    lips.classList.remove('show');
+    teddyWrap.classList.remove('teddy-center');
+  }, 1200);
+}
+followAndBounce();
