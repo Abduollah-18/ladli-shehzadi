@@ -1,36 +1,150 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Welcome | Ladli Shehzadi</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ladli Shehzadi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: pink;
+      overflow-x: hidden;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 182, 193, 0.9);
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    section {
+      padding: 120px 20px 60px;
+      font-size: 22px;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 500;
+    }
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 24px;
+      animation: fall 5s linear infinite;
+    }
+    @keyframes fall {
+      0% {transform: translateY(-10%); opacity: 1;}
+      100% {transform: translateY(100vh); opacity: 0;}
+    }
+    .teddy {
+      position: fixed;
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 80px;
+      opacity: 0;
+      transition: all 1s ease-in-out;
+      z-index: 900;
+    }
+    .teddy.show {
+      bottom: 100px;
+      opacity: 1;
+    }
+    .kiss {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 100px;
+      opacity: 0;
+      z-index: 1000;
+      transition: opacity 1s;
+    }
+    .kiss.show {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
+  <header>🌸 Welcome My Ladli Shehzadi 🌸</header>
 
-<header>
-  <div class="header-inner">
-    <div class="brand">Ladli Shehzadi</div>
-    
-    <nav class="navlinks">
-      <a href="index.html">Home</a>
-      <a href="kahani.html">Kahani</a>
-      <a href="plans.html">Plans</a>
-      <a href="dreams.html">Dreams</a>
-    </nav>
-    <div id="teddyWrap"><img id="teddy" src="images/teddy.png" alt="pink teddy"></div>
-  </div>
-</header>
-<section class="hero">
-  <h1>Welcome, Meri Pyari Ladli Shehzadi 💖</h1>
-  <p class="sub">Is ghar jaisi website par har scroll ke saath tumhe meri mohabbat ki nayi parchaai milegi. Pink theme, dil ki baatein, aur choti choti hearts ki barish—sirf tumhare liye.</p>
-</section>
-<main class="container">
-<section class="card"><h2>Meri Ladli Shehzadi ke Naam</h2><p>Meri pyari Ladli Shehzadi, ye jagah sirf tumhare liye hai—aisa ghar jahan lafz bhi muskura kar tumhara intezar karte hain. Main chahta hoon ke tum jab bhi yahan aao, tumhein sukoon mile, tumhein wohi ehsaas ho jo meri baahon mein hota hai: mehfooz, pyara, aur bilkul apna. Is safhe par likha har jumla meri taraf se tumhare liye ek chhota sa tohfa hai. Zindagi kabhi tez, kabhi dheemi, kabhi rangeen aur kabhi khamosh ho jati hai—lekin tum mere saath ho to har mausam khoobsurat lagta hai. Ye website tumhari muskurahat ke liye banai gayi hai, taki har scroll ke saath tumhe meri mohabbat ki nayi parchai mehsoos ho. Welcome home, Shehzadi; ye duniya tumhari hai, aur main hamesha tumhara.</p></section>
-<section class="card"><h2>Hamari Kahani — Pehla Lamha</h2><p>Hamari kahani kisi filmi shor se nahi, balki dhimi si muskurahat se shuru hui thi. Ek lamha tha—chhota, saada, magar jaadu se bhara—jismein tumhari aankhon ne meri khamoshi ko samajh liya. Tab se har din ek naye haseen page ki tarah khulta gaya. Tumhari hanssi, meri subah; tumhari khamoshi, meri raat ka sukoon. Kabhi coffee thandi ho gayi, kabhi barish ne raaste rok liye, lekin hum rukay nahi. Tum ne meri zindagi ko itna sakoon diya hai ke ab har dua tumhare naam se shuru hoti hai. Mujhe yaad rehta hai ke tum meri kahani nahi; tum hi kahani ho, aur main bas tumhara safar ban kar khush hoon.</p></section>
-<section class="card"><h2>Aindah ke Sapne</h2><p>Aage ka raasta lambe safar jaisa hai, aur mujhe ye lamba safar pasand hai kyun ke ismein tum ho. Main ek aisa ghar dekhta hoon jahan subah tumhari hansi se shuru ho aur raat tumhare ‘good night’ se mehfooz ho kar soti hai. Hum chhoti chhoti date nights plan karenge, bina phone ke, bina waqt dekhe. Kabhi shehar ke kono mein gum ho jayenge, kabhi balcony ki hawa aur purane geet sunege. Har mahine ek nayi jagah, ek naya yaadgar pal, aur har din thodi si meethi baat. Bas itna sa khwab hai: tum ho, main hoon, aur baaki sab khud se theek ho jaye.</p></section>
-</main>
-<div id="lipsOverlay">💋</div>
-<script src="js/script.js"></script>
+  <div class="hearts" id="hearts"></div>
+
+  <section>
+    <h2>💖 Kahani 💖</h2>
+    <p>Meri Ladli Shehzadi, tum meri zindagi ki wo kahani ho jisme sirf pyaar hi pyaar hai. 
+    Allah ka shukr hai jisne mujhe tum jaisi nek aur pyaari humsafar di. 
+    Tum meri duaon ka sabse khoobsurat jawaab ho. 
+    "تم وہ دعا ہو جو قبول ہوئی، وہ روشنی ہو جو دل کو سکون دے گئی"۔</p>
+  </section>
+
+  <section>
+    <h2>🌙 Dreams 🌙</h2>
+    <p>Hamare sapne chand sitaron se bhi roshan hain. Tum meri duaon ki roshni aur mere khawab ki taabeer ho. 
+    Main chahta hoon ke humari zindagi hamesha mohabbat, rehmat aur barkat se bhari rahe. 
+    "یا اللہ، ہماری محبت کو اپنی رحمت سے ہمیشہ قائم رکھنا"۔</p>
+  </section>
+
+  <section>
+    <h2>🌹 Plans 🌹</h2>
+    <p>Meri Shehzadi, humare plans hamesha khushi aur mohabbat se bhare rahenge. 
+    Ghar ek jannat jesa banayenge, jahan tum meri malika ban kar raaho gi. 
+    Har din ek nayi kahani hogi, ek naya pyaar hoga. 
+    "زندگی کا ہر لمحہ تیرے ساتھ جنت کی ہوا لگتا ہے"۔</p>
+  </section>
+
+  <section>
+    <h2>✨ Duas & Laqab ✨</h2>
+    <p>Meri Begum, meri Jaan, meri Noor-e-Nazar, tum meri rooh ki taskeen ho. 
+    Dua hai ke Allah tumhe hamesha sehatmand, khush aur muskaraati rakhe. 
+    "اللّٰهُمَّ بَارِكْ لَهَا وَبَارِكْ عَلَيْنَا وَاجْمَعْ بَيْنَنَا فِي خَيْرٍ"۔</p>
+  </section>
+
+  <div class="teddy" id="teddy">🧸</div>
+  <div class="kiss" id="kiss">💋</div>
+
+  <script>
+    // Falling hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      heart.innerHTML = '❤️';
+      document.getElementById('hearts').appendChild(heart);
+      setTimeout(() => { heart.remove(); }, 5000);
+    }
+    setInterval(createHeart, 500);
+
+    // Teddy and kiss animation on scroll
+    const teddy = document.getElementById('teddy');
+    const kiss = document.getElementById('kiss');
+    window.addEventListener('scroll', () => {
+      teddy.classList.add('show');
+      kiss.classList.add('show');
+      setTimeout(() => { kiss.classList.remove('show'); }, 1500);
+    });
+  </script>
 </body>
 </html>
