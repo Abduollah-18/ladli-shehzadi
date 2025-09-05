@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,17 +58,16 @@
     }
     .teddy {
       position: fixed;
-      bottom: -150px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 60px;
+      left: 20px;
       font-size: 80px;
       opacity: 0;
       transition: all 1s ease-in-out;
-      z-index: 900;
+      z-index: 1100;
     }
     .teddy.show {
-      bottom: 100px;
       opacity: 1;
+      transform: translateY(100px);
     }
     .kiss {
       position: fixed;
@@ -78,7 +76,7 @@
       transform: translate(-50%, -50%);
       font-size: 100px;
       opacity: 0;
-      z-index: 1000;
+      z-index: 1200;
       transition: opacity 1s;
     }
     .kiss.show {
@@ -144,6 +142,7 @@
       teddy.classList.add('show');
       kiss.classList.add('show');
       setTimeout(() => { kiss.classList.remove('show'); }, 1500);
+      setTimeout(() => { teddy.classList.remove('show'); }, 2500);
     });
   </script>
 </body>
