@@ -1,41 +1,48 @@
 
 :root{
-  --rose:#b30059; --bg1: #fff5fb; --card:#fff0f7; --text:#3b0b2f; --shadow: 0 10px 30px rgba(0,0,0,.08);
+  --rose:#c2185b; --bg1:#fff5fb; --card:#fff0f7; --text:#3b0b2f; --shadow:0 12px 30px rgba(0,0,0,.08);
 }
-*{box-sizing:border-box} html,body{margin:0;padding:0} body{
-  font-family: "Segoe UI", Tahoma, sans-serif; background:linear-gradient(180deg,#fff5fb,#ffe6f4); color:var(--text);
-  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background:linear-gradient(180deg,#fff5fb,#ffe6f4);
+  color:var(--text); -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
 
-/* header with hidden teddy behind it */
-header{ position:sticky; top:0; z-index:60; background:linear-gradient(90deg,#ffd6ec,#ffe6f3); box-shadow:var(--shadow); height:90px; display:flex; align-items:flex-end; }
-.header-inner{ width:100%; max-width:1100px; margin:0 auto; padding:10px 20px; position:relative; display:flex; align-items:center; gap:12px; }
+/* Header */
+header{ position:sticky; top:0; z-index:80; background:linear-gradient(90deg,#ffd6ec,#ffe6f3); box-shadow:var(--shadow); height:88px; display:flex; align-items:flex-end; overflow:visible; }
+.header-inner{ width:100%; max-width:1100px; margin:0 auto; padding:8px 20px; position:relative; display:flex; align-items:center; gap:12px; }
 .brand{ font-weight:800; color:var(--rose); font-size:22px; margin-bottom:8px; }
 nav{ margin-left:auto; display:flex; gap:10px; margin-bottom:8px; }
 nav a{ background:#ffffffcc; padding:8px 12px; border-radius:999px; color:var(--rose); font-weight:600; text-decoration:none; box-shadow:var(--shadow); }
 
-/* teddy peek: positioned so most of it is behind header */
-#teddyWrap{ position:absolute; right:16px; top:46px; width:90px; height:90px; overflow:hidden; border-bottom-left-radius:18px; border-bottom-right-radius:18px; pointer-events:none; z-index:10; }
-#teddy{ width:140px; transform: translateY(-58px) translateX(-20px); transition: transform .45s cubic-bezier(.2,.9,.3,1), width .3s; will-change: transform; }
-/* when out (center) */
-.teddy-out{ position:fixed !important; left:50% !important; top:50% !important; transform: translate(-50%,-10%) scale(1.2) !important; width:260px !important; z-index:120; transition: all .5s ease; }
-/* when hiding back, animate */
-.teddy-hide{ transform: translateY(-58px) translateX(-20px) !important; width:140px !important; transition: all .5s ease; }
+/* Teddy peek: mostly hidden behind header via negative translateY */
+#teddyWrap{ position:absolute; right:16px; top:46px; width:96px; height:96px; overflow:hidden; border-bottom-left-radius:18px; border-bottom-right-radius:18px; pointer-events:none; }
+#teddy{ width:160px; transform: translateY(-72px) translateX(-20px); transition: transform .45s cubic-bezier(.2,.9,.3,1), width .3s; will-change: transform; z-index:5; }
+/* when teddy comes out center */
+.teddy-out{ position:fixed !important; left:50% !important; top:50% !important; transform: translate(-50%,-10%) scale(1.12) !important; width:300px !important; z-index:220 !important; transition: all .45s ease; }
+/* hide back */
+.teddy-hide{ transform: translateY(-72px) translateX(-20px) !important; width:160px !important; transition: all .4s ease; }
 
 /* hero and sections */
 .hero{ padding:80px 20px 28px; text-align:center; background:linear-gradient(180deg,#ffedf8,#ffe6f4); }
 .hero h1{ font-size:clamp(36px,5vw,64px); margin:0; color:var(--rose); text-shadow:2px 2px 0 #fff; }
-.hero p{ max-width:900px; margin:12px auto 0; color:#7a2544; }
+.hero .sub{ max-width:900px; margin:12px auto 0; color:#7a2544; }
 
-.container{ max-width:1000px; margin:28px auto; padding:0 20px; }
+.container{ max-width:1100px; margin:28px auto; padding:0 20px; }
 .card{ background:var(--card); border-radius:16px; padding:28px; margin-bottom:28px; box-shadow:var(--shadow); line-height:1.9; }
 .card h2{ margin-top:0; color:var(--rose); }
 
 /* hearts */
-.heart{ position:fixed; top:-20px; z-index:30; pointer-events:none; font-size:20px; animation:fall 6s linear infinite; }
+.heart{ position:fixed; top:-20px; z-index:40; pointer-events:none; font-size:20px; animation:fall 6s linear infinite; }
 @keyframes fall{ 0%{ transform:translateY(-10px) rotate(0); opacity:1 } 100%{ transform:translateY(110vh) rotate(360deg); opacity:0 } }
 
 /* lips overlay */
-#lipsOverlay{ position:fixed; inset:0; display:grid; place-items:center; z-index:200; pointer-events:none; opacity:0; transform:scale(.7); transition:all .2s; }
+#lipsOverlay{ position:fixed; inset:0; display:grid; place-items:center; z-index:240; pointer-events:none; opacity:0; transform:scale(.7); transition:all .2s; }
 #lipsOverlay.show{ opacity:1; transform:scale(1); animation:kisspop .9s forwards; }
 @keyframes kisspop{ 0%{opacity:0; transform:scale(.6)} 40%{opacity:1; transform:scale(1.06)} 70%{opacity:1; transform:scale(1)} 100%{opacity:0; transform:scale(.9)} }
+
+/* small responsive */
+@media (max-width:600px){
+  #teddy{ width:110px; transform: translateY(-62px) translateX(-10px); }
+  .teddy-out{ width:200px !important; }
+}
