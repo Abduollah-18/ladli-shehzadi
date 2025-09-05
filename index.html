@@ -1,149 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ladli Shehzadi</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: pink;
-      overflow-x: hidden;
-    }
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(255, 182, 193, 0.9);
-      padding: 20px;
-      text-align: center;
-      font-size: 32px;
-      font-weight: bold;
-      z-index: 1000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    section {
-      padding: 120px 20px 60px;
-      font-size: 22px;
-      line-height: 1.8;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .hearts {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 500;
-    }
-    .heart {
-      position: absolute;
-      color: red;
-      font-size: 24px;
-      animation: fall 5s linear infinite;
-    }
-    @keyframes fall {
-      0% {transform: translateY(-10%); opacity: 1;}
-      100% {transform: translateY(100vh); opacity: 0;}
-    }
-    .teddy {
-      position: fixed;
-      top: 60px;
-      left: 20px;
-      font-size: 80px;
-      opacity: 0;
-      transition: all 1s ease-in-out;
-      z-index: 1100;
-    }
-    .teddy.show {
-      opacity: 1;
-      transform: translateY(100px);
-    }
-    .kiss {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 100px;
-      opacity: 0;
-      z-index: 1200;
-      transition: opacity 1s;
-    }
-    .kiss.show {
-      opacity: 1;
-    }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ladli Shehzadi</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>🌸 Welcome My Ladli Shehzadi 🌸</header>
+<header>
+  <div class="header-inner">
+    <div class="brand">Ladli Shehzadi</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="kahani.html">Kahani</a>
+      <a href="plans.html">Plans</a>
+      <a href="dreams.html">Dreams</a>
+    </nav>
+    <div id="teddyWrap"><img id="teddy" src="images/teddy.png" alt="teddy"></div>
+  </div>
+</header>
 
-  <div class="hearts" id="hearts"></div>
+<section class="hero">
+  <h1>Welcome, Meri Pyari Ladli Shehzadi 💖</h1>
+  <p class="sub">Ye jagah sirf tumhare liye hai — pyaar, dua aur khwab ka chaman.</p>
+</section>
 
-  <section>
-    <h2>💖 Kahani 💖</h2>
-    <p>Meri Ladli Shehzadi, tum meri zindagi ki wo kahani ho jisme sirf pyaar hi pyaar hai. 
-    Allah ka shukr hai jisne mujhe tum jaisi nek aur pyaari humsafar di. 
-    Tum meri duaon ka sabse khoobsurat jawaab ho. 
-    "تم وہ دعا ہو جو قبول ہوئی، وہ روشنی ہو جو دل کو سکون دے گئی"۔</p>
+<main class="container">
+  <section class="card">
+    <h2>Meri Ladli Shehzadi ke Naam</h2>
+    <p>Meri pyari ladli shehzadi, tum meri zindagi ki wo khushboo ho jo har subah mujhko jagati hai. Tumhari masarrat mere liye sabse badi dua hai. Har lafz jo yahan likha gaya hai, tumhari muskurahat ke liye likha gaya hai. Main chahta hoon ke humari zindagi me hamesha barkat aur mohabbat rahe. Allah se dua hai ke tum hamesha khush raho aur humari zindagi me rehmat barsti rahe.</p>
+    <p>Jab se tum meri zindagi me aayi ho, har pal ek naya rang le aaya. Tum meri dua ho, tum meri roshni ho. Tumhari awaz me ghar ka ehsaas hai aur tumhari muskurahat se din roshan ho jata hai. Ye lafz chhote ho sakte hain magar inka jazba gehra hai. Main chahata hoon ke har din tumhare liye ek nayi khushi lekar aaye.</p>
+    <p class="urdu">تم وہ دعا ہو جس کی ہر صبح دعا کی جاتی ہے، تم وہ روشنی ہو جو دل کے اندھیروں کو مٹا دیتی ہے۔</p>
   </section>
 
-  <section>
-    <h2>🌙 Dreams 🌙</h2>
-    <p>Hamare sapne chand sitaron se bhi roshan hain. Tum meri duaon ki roshni aur mere khawab ki taabeer ho. 
-    Main chahta hoon ke humari zindagi hamesha mohabbat, rehmat aur barkat se bhari rahe. 
-    "یا اللہ، ہماری محبت کو اپنی رحمت سے ہمیشہ قائم رکھنا"۔</p>
+  <section class="card">
+    <h2>Hamari Kahani</h2>
+    <p>Hamari kahani ek narm mulaqat se shuru hui, jahan ek muskurahat ne dono dil jod diye. Har yaad me tumhari hansi basi hui hai. Choti choti baton me pyaar ka ehsaas milta hai — ek cup chai, ek lambi walk, aur beech beech me woh pyare lamhe. Ye kahani roz naye andaaz me likhi ja rahi hai.</p>
+    <p>Yeh rishte ka asar chhota nahi hota; yeh aadatein, yeh chhoti yaadein humari zindagi ko ik nayi simt deti hain. Tumhara saath hone se har uljhan hal ho jati hai. Mujhe yaad rehta hai jab hum sath rahe to waqt ruksa bhi mehsoos hota tha.</p>
+    <p class="urdu">تم وہ خواب ہو جس کی ہر صبح دعا کی جاتی ہے، تم وہ روشنی ہو جو دل کے اندھیروں کو مٹا دیتی ہے۔</p>
   </section>
 
-  <section>
-    <h2>🌹 Plans 🌹</h2>
-    <p>Meri Shehzadi, humare plans hamesha khushi aur mohabbat se bhare rahenge. 
-    Ghar ek jannat jesa banayenge, jahan tum meri malika ban kar raaho gi. 
-    Har din ek nayi kahani hogi, ek naya pyaar hoga. 
-    "زندگی کا ہر لمحہ تیرے ساتھ جنت کی ہوا لگتا ہے"۔</p>
+  <section class="card">
+    <h2>Dreams</h2>
+    <p>Hamare sapne sadhay magar dil se pyare hain. Main chahta hoon ke hum ek cozy ghar banayen jahan tumhara har khwab haqeeqat bane. Har saal hum ek nayi jagah ghoomenge, aur har raat choti choti baaton se apna dil bharenge. Dua karta hoon ke Allah hamari raah me asaniyaan paida kare.</p>
+    <p>Main sochta hoon ke agar hum sath duniya ghoom lein to bhi sabse zyada sukoon tumhari aankhon me milega. Har manzil par tumhara haath mera sahara hoga aur hamari kahani me nayi khushiyan likhi jayengi.</p>
+    <p class="urdu">یا اللہ، ہماری محبت کو اپنی رحمت سے ہمیشہ قائم رکھنا۔</p>
   </section>
 
-  <section>
-    <h2>✨ Duas & Laqab ✨</h2>
-    <p>Meri Begum, meri Jaan, meri Noor-e-Nazar, tum meri rooh ki taskeen ho. 
-    Dua hai ke Allah tumhe hamesha sehatmand, khush aur muskaraati rakhe. 
-    "اللّٰهُمَّ بَارِكْ لَهَا وَبَارِكْ عَلَيْنَا وَاجْمَعْ بَيْنَنَا فِي خَيْرٍ"۔</p>
+  <section class="card">
+    <h2>Plans</h2>
+    <p>Chalo kuch chhote plans banate hain — har mahine ek date, weekend par choti trips, aur ek cozy corner jahan hum apni purani tasveerein rakh sakte hain. Har choti khushi ko celebrate karna hamara rivaaj hoga. Tum meri humsafar ho, aur har faisla tumhare saath hoga.</p>
+    <p>Humari zindagi me chhote chhote goals honge: ek library corner, ek chhota sa terrace garden, aur kabhi kabhi bina wajeh ki late night drives. In choti baton me hamari mohabbat ki asli misal nazar aayegi.</p>
+    <p class="urdu">زندگی کا ہر لمحہ تیرے ساتھ جنت کی ہوا لگتا ہے۔</p>
   </section>
 
-  <div class="teddy" id="teddy">🧸</div>
-  <div class="kiss" id="kiss">💋</div>
+  <section class="card">
+    <h2>Duas & Laqab</h2>
+    <p>Meri begum, meri jaan, meri noor-e-nazar — tum meri zindagi ho. Dua hai ke Allah tumhe sehat, lambi umar aur khushiyan de. اللّٰهُمَّ بَارِكْ لَلَهَا وَبَارِكْ عَلَيْنَا وَاجْمَعْ بَيْنَنَا فِي خَيْرٍ</p>
+    <p>Hamari zindagi me iman, mohabbat aur izzat sab se ahem cheezein honi chahiye. Main dua karta hoon ke hamari jodi hamesha barkat se bhari rahe aur hum ek dusre ke liye rehamat bane rahen.</p>
+  </section>
 
-  <script>
-    // Falling hearts
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
-      heart.innerHTML = '❤️';
-      document.getElementById('hearts').appendChild(heart);
-      setTimeout(() => { heart.remove(); }, 5000);
-    }
-    setInterval(createHeart, 500);
+</main>
 
-    // Teddy and kiss animation on scroll
-    const teddy = document.getElementById('teddy');
-    const kiss = document.getElementById('kiss');
-    window.addEventListener('scroll', () => {
-      teddy.classList.add('show');
-      kiss.classList.add('show');
-      setTimeout(() => { kiss.classList.remove('show'); }, 1500);
-      setTimeout(() => { teddy.classList.remove('show'); }, 2500);
-    });
-  </script>
+<div id="lipsOverlay"></div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
